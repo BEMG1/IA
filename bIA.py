@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from unidecode import unidecode
 
+
 import random
 from baseConocimientos import base_conocimientos
 app = Flask(__name__)
@@ -50,9 +51,10 @@ def index():
 def consultar_respuesta():
     pregunta = request.form['pregunta']
     respuesta = obtener_respuesta(pregunta)
+    print("Respuesta obtenida:", respuesta)  # Agregar esta línea para depurar
     return respuesta
 
-    return "Idioma cambiado a {}".format(nuevo_idioma)
+
 @app.route('/ajustes')
 def ajustes():
     return render_template('ajustes.html')

@@ -1,6 +1,5 @@
 document.write('<script src="https://code.jquery.com/jquery-3.6.4.min.js"><\/script>');
 
-
 function controlBoton() {
     var usuario = document.getElementById('input-pregunta');
     var btnpregunta = document.getElementById('btnpreguntar');
@@ -38,91 +37,86 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function validarCampo() {
     controlBoton();
-
 }
+
 function consultarRespuesta() {
     var inputUsuario = document.getElementById('input-pregunta');
     var pregunta = inputUsuario.value.trim();
     var chatConten = document.getElementById('chat');
     var parrafo = document.createElement('p');
     var icono = document.createElement('img');
-    // var separador = document.createElement('hr');
-    icono.src = '../static/usuario.png';
-
+    icono.src = '../static/img/usuario.png';
     icono.classList.add('icono-usuario');
-
     parrafo.innerHTML = pregunta + ' :';
     parrafo.appendChild(icono);
-
-
-    // chatConten.appendChild(separador);
-    parrafo.classList.add('derecha');
-
     chatConten.appendChild(parrafo);
 
+    var separador = document.createElement('hr');
+    separador.classList.add('hr-difuminado');
+    chatConten.appendChild(separador);
+
+    parrafo.classList.add('derecha');
     inputUsuario.disabled = true;
 
-         $.post('/consultar_respuesta', { pregunta: pregunta }, function (respuesta) {
-             var chatContenido = document.getElementById('chat');
-             var nRespuesta = document.createElement('p');
-             nRespuesta.innerHTML = 'bIA: ';
-             chatContenido.appendChild(nRespuesta);
+    $.post('/consultar_respuesta', { pregunta: pregunta }, function (respuesta) {
+        var chatContenido = document.getElementById('chat');
+        var nRespuesta = document.createElement('p');
+        nRespuesta.innerHTML = 'bIA: ';
+        chatContenido.appendChild(nRespuesta);
 
-               
-             respuesta.split('').forEach(function (letra, index) {
-         
-                 setTimeout( function () {
-                     nRespuesta.innerHTML += letra;
-                     chatContenido.scrollTop = chatContenido.scrollHeight;
+        respuesta.split('').forEach(function (letra, index) {
 
-                    //  letra.scrollIntoView({ behavior: 'smooth', block: 'end' });
-                 }, index * 20);
-             });
+            setTimeout( function () {
+                nRespuesta.innerHTML += letra;
+                chatContenido.scrollTop = chatContenido.scrollHeight;
 
-             setTimeout(function() {
-                inputUsuario.disabled = false;
-             }, respuesta.length * 20);
-           
-         });
+            }, index * 20);
+        });
+        setTimeout(function() {
+            inputUsuario.disabled = false;
+        }, respuesta.length * 20);
 
-         inputUsuario.value = '';
-         
-         controlBoton();
+        setTimeout(function() {
+            inputUsuario.disabled = false; 
+            inputUsuario.focus(); 
+        }, respuesta.length * 20);
 
-         controlLimpiar();
-     }
+    });
+    inputUsuario.value = '';
 
+    controlBoton();
+    controlLimpiar();
+}
 
- var verificar;
+var verificar;
 document.addEventListener('DOMContentLoaded', function () {
 
-var chatContainer = document.getElementById('chat');
-var btnScroll = document.getElementById('BtnScroll');
+    var chatContainer = document.getElementById('chat');
+    var btnScroll = document.getElementById('BtnScroll');
 
+    function btnToScroll() {
 
-function btnToScroll() {
-
-    chatContainer.scrollTop = chatContainer.scrollHeight;
-    btnScroll.style.display = 'none';
-}
-
-btnScroll.addEventListener('click', btnToScroll);
-
-verificar = function () {
-    var siverificar = chatContainer.scrollHeight - chatContainer.scrollTop - chatContainer.clientHeight <= 1;
-
-    if (siverificar) {
+        chatContainer.scrollTop = chatContainer.scrollHeight;
         btnScroll.style.display = 'none';
-    } else {
+    }
 
-       btnScroll.style.display = 'block';
-}
-}
-verificar();
+    btnScroll.addEventListener('click', btnToScroll);
 
-chatContainer.addEventListener('scroll', verificar);
-window.addEventListener('load', verificar);
-window.addEventListener('resize', verificar);
+    verificar = function () {
+        var siverificar = chatContainer.scrollHeight - chatContainer.scrollTop - chatContainer.clientHeight <= 1;
+
+        if (siverificar) {
+            btnScroll.style.display = 'none';
+        } else {
+
+            btnScroll.style.display = 'block';
+        }
+    }
+    verificar();
+
+    chatContainer.addEventListener('scroll', verificar);
+    window.addEventListener('load', verificar);
+    window.addEventListener('resize', verificar);
 
 });
 
@@ -137,7 +131,7 @@ function enviarEnter(event) {
 function limpiarChat() {
     document.getElementById('chat').innerHTML = '';
 
-        controlLimpiar();
+    controlLimpiar();
 
     setTimeout( function () {
         verificar();

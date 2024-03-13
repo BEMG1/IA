@@ -10,13 +10,10 @@ body {
 #BtnScroll {
     display: none;
 }
+
 #ajustes {
     margin-right: auto;
 }
-
-/* #generando-letras {
-    display: none;
-} */
 
 #punto {
     display: inline-block;
@@ -65,8 +62,8 @@ textarea {
     left: 50%;
     transform: translateX(-50%);
 }
+
 #chat-container-ajustes {
-    /* max-width: 600px; */
     margin: auto;
     padding: 20px;
     background-color: #e7e6e6;
@@ -81,6 +78,7 @@ textarea {
     left: 50%;
     transform: translateX(-50%);    
 }
+
 img {
     width: 100px; 
     height: auto; 
@@ -92,20 +90,19 @@ img {
     justify-content: flex-start; 
     position: absolute;
     top: 0;
-    width: 100%; /* Ajusta el ancho al 100% */
+    width: 100%;
     padding: 10px;
 }
-.redondo{
-border-radius: 50%;
-padding: 8px;
-background-color: #e7e6e6;
-color: black;
-border: 1px solid black;
-border-radius: 4px;
-cursor: pointer;
 
+.redondo {
+    border-radius: 50%;
+    padding: 8px;
+    background-color: #e7e6e6;
+    color: black;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
 }
-
 
 #a-ajustes {
     position: absolute;
@@ -117,10 +114,10 @@ cursor: pointer;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    /* border: 2px solid #333; */
     background-color: #e7e6e6;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .a-ajustes-img {
     width: 100%;
     height: 100%;
@@ -141,19 +138,29 @@ cursor: pointer;
     word-wrap:  break-word;
     max-width: 100%;
 }
+
 .chat::-webkit-scrollbar {
     width: 8px;
 }
+
 .chat::-webkit-scrollbar-thumb{
     background: #525252; 
     border-radius: 5px;
 }
+
 .chat::-webkit-scrollbar-thumb:hover{
     background: #868686;
     box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2); 
 }
+
 .chat::-webkit-scrollbar-thumb:active{
     background-color: #999999;
+}
+
+.hr-difuminado {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ccc, transparent);
 }
 
 .chat::-webkit-scrollbar-track {
@@ -163,33 +170,33 @@ cursor: pointer;
 
 #input-container {
     display: flex;
-    /* justify-content: space-between;
-    align-items: center;
-    margin-top: 8vh; */
 }
 
 #input-pregunta {
     padding: 8px;
     margin-right: 5px;
 }
+
 a {
     text-decoration: none;
 }
+
 .derecha {
     text-align: right;
-  }
+}
 
 .izquierda {
     text-align: left;
     margin-left: 5vh;
-  }
-  
-  .icono-usuario {
+}
+
+.icono-usuario {
     float: right;
     width: 3vh;
     height: auto;
     margin-top: -5px;
 }
+
 button {
     padding: 8px;
     background-color: #e7e6e6;
@@ -209,7 +216,11 @@ button:hover {
     cursor: default;
 } 
 
+.mensaje {
+    margin-top: 10px;
+}
+
 p {
     margin: 5px 0;
-    height: 5vh;
+    height: auto;
 }

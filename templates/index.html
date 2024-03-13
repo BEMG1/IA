@@ -19,21 +19,20 @@
             <img src="{{ url_for('static', filename='logo.png')}}" alt="logo">
         </div> -->
         <!-- <h1>Bienvenido a bIA</h1>   -->
-        <a id="a-ajustes" class="derecha"  href="{{ url_for('ajustes')}}">
-            <img class="a-ajustes-img" src="{{url_for('static', filename='tuerca.png')}}" alt="ajustes">
-        </a>
+        <!-- <a id="a-ajustes" class="derecha"  href="{{ url_for('ajustes')}}">
+            <img class="a-ajustes-img" src="{{url_for('static', filename='img/tuerca.png')}}" alt="ajustes">
+        </a> -->
     </header>
        
-    <div id="chat-container">
-        <div id="chat" class="chat"></div>
-    
-        <div id="input-container">
-            <textarea type="text" id="input-pregunta" placeholder="Pregunta a bIA...." onkeydown="enviarEnter(event)" oninput="controlBoton()"></textarea>
-            <button id="btnpreguntar" onclick="consultarRespuesta()">Preguntar</button>
-            <button id="btnlimpiar" onclick="limpiarChat()">Limpiar</button>
-            <button class="redondo" id="BtnScroll">↓</button>
-        </div>
+   <div id="chat-container">
+    <div id="chat" class="chat"></div>
+    <div id="input-container">
+        <textarea type="text" id="input-pregunta" placeholder="Pregunta a bIA...." onkeydown="enviarEnter(event)" oninput="controlBoton()"></textarea>
+        <button id="btnpreguntar" onclick="consultarRespuesta()">Preguntar</button>
+        <button id="btnlimpiar" onclick="limpiarChat()">Limpiar</button>
+        <button class="redondo" id="BtnScroll">↓</button>
     </div>
+</div>
 
 </body>
 
