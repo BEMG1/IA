@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{url_for('static', filename='estilo.css')}}">
         <script src="{{url_for('static', filename='script.js')}}"></script>
-        <script src="{{url_for('static', filename='traduccion.json')}}"></script>
+        <!-- <script src="{{url_for('static', filename='.json')}}"></script> -->
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <link rel="icon" href="{{ url_for('static', filename='img/logo.png')}}" type="image/png">
         
@@ -18,18 +18,33 @@
         <div id="logo-container">
             <img src="{{ url_for('static', filename='img/logo.png')}}" alt="logo">
         </div>
-        <h1 id="titulo-bienvenida">Bienvenido a bIA</h1>
+        <h1 id="titulo-ajustes">Ajustes</h1>
     </header>
-    <div id="chat-container-ajustes">
-        <h1 class="izquierda" id="titulo-ajustes">Ajustes</h1>
+    <a id="a-ajustes" class="derecha"  href="{{ url_for('index')}}">
+        <img class="a-ajustes-img" src="{{url_for('static', filename='img/casa.png')}}" alt="volver">
+    </a> 
+    
+    <div id="container-ajustes">
+        
+        <h1 id="titulo-ajustesG">Ajustes Generales</h1>
         <div id="idioma-container">
+            <button id="btn-guardar" onclick="guardar()" >Guardar</button>
+            <div class="separador"></div>
             <label for="select-idioma" id="etiqueta-idioma">Seleccione el idioma: </label>
-            <select id="select-idioma">
-                <option value="espanol">Español</option>
-                <option value="ingles">Ingles</option>
+            <div class="separador"></div>
+            <select id="select-idioma"  >
+                <option id="opcion-espanol" value="es">Español</option>
+                <option id="opcion-ingles" value="en">Ingles</option>
             </select>
-            <button id="btn-guardar" onclick="cambiarIdioma()">Guardar</button>
-            <a href="{{url_for('index')}}">Vovler</a>
+            <div class="separador"></div>
+            <label for="modo" id="etiqueta-modo">Seleccione el modo:</label>
+            <div class="separador"></div>
+            <select name="modo" id="selector-modo">
+                <option id="opcion-claro" value="claro">Modo Claro ⬜</option>
+                <option id="opcion-oscuro" value="oscuro">Modo Oscuro ⬛</option>
+            </select>
+            
+           
         </div>
     </div>
 

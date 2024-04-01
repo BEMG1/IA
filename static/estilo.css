@@ -15,24 +15,6 @@ body {
     margin-right: auto;
 }
 
-#punto {
-    display: inline-block;
-    width: 10px; 
-    height: 10px; 
-    background-color: green; 
-    border-radius: 50%; 
-    margin-left: 5px; 
-}
-
-@keyframes moverPunto {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(10px);
-    }
-}
-
 h1 {
     text-align: center;
     color: #333;
@@ -63,21 +45,87 @@ textarea {
     transform: translateX(-50%);
 }
 
-#chat-container-ajustes {
-    margin: auto;
+
+#container-ajustes {
+    margin-top: 20vh;
+    margin-left: 5vh;
     padding: 20px;
-    background-color: #e7e6e6;
-    border-radius: 8px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
+    max-width: 92%;
+    width: 92%;
+    float: left;
+  }
+  
+
+  #titulo-ajustesG {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: left;
+  }
+  
+
+  #btn-guardar {
+    background-color: #e7e6e6;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 0;
+  }
+
+  #btn-guardar:hover {
+    background-color: #cecaca;
+} 
+  
+  .separador {
     width: 100%;
-    height: 80vh;
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);    
-}
+    margin: 20px 0;
+  }
+  
+  #etiqueta-idioma {
+    font-size: 16px;
+    color: #555;
+  }
+  
+
+  #select-idioma {
+    width: 20%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #555;
+  }
+  
+  #select-idioma option {
+    padding: 5px;
+
+  }
+
+  #etiqueta-modo {
+    font-size: 16px;
+    color: #555;
+  }
+  
+
+  #selector-modo {
+    width: 20%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #555;
+  }
+  
+  #selector-modo option {
+    padding: 5px;
+  }
+  
+
 
 img {
     width: 100px; 
@@ -94,15 +142,6 @@ img {
     padding: 10px;
 }
 
-.redondo {
-    border-radius: 50%;
-    padding: 8px;
-    background-color: #e7e6e6;
-    color: black;
-    border: 1px solid black;
-    border-radius: 4px;
-    cursor: pointer;
-}
 
 #a-ajustes {
     position: absolute;
@@ -118,11 +157,14 @@ img {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+
+
 .a-ajustes-img {
     width: 100%;
     height: 100%;
     display: block;
 }
+
 
 #logo-container {
     margin-right: 20px;
@@ -224,3 +266,116 @@ p {
     margin: 5px 0;
     height: auto;
 }
+
+/* ------------------------------------------------------------------ */
+.modo-oscuro {
+    
+    background-color: #302c2c;
+}
+
+.modo-oscuro textarea {
+
+    background-color: rgb(104, 104, 104);
+    color: #e1e1e1;
+}
+
+.modo-oscuro h1 {
+    color: #ccc;
+}
+
+.modo-oscuro textarea::placeholder {
+    color: #e1e1e1;
+}
+
+.modo-oscuro #chat-container {
+
+    background-color: #4b4b4b;
+    box-shadow: 0 0 10px rgba(161, 161, 161, 0.1);
+}
+.modo-oscuro #container-ajustes {
+        
+    background-color: #4b4b4b;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);   
+}
+
+.modo-oscuro #titulo-ajustesG {
+    color: #ccc;
+}
+
+.modo-oscuro #btn-guardar {
+    background-color: #888888;
+    color: white;
+  }
+
+.modo-oscuro #btn-guardar:hover {
+    background-color: #6d6d6d; 
+}
+
+.modo-oscuro #etiqueta-idioma {
+    
+    color: #ccc;
+  }
+
+.modo-oscuro #select-idioma {
+
+    border: 1px solid #ccc;
+    background-color: #888888;
+    color: white;
+  }
+
+.modo-oscuro #etiqueta-modo {
+    
+    color: #ccc;
+  }
+
+.modo-oscuro #selector-modo {
+
+    border: 1px solid #ccc;
+    background-color: #888888;
+    color: white;
+  }
+
+.modo-oscuro #a-ajustes {
+    background-color: #6d6d6d;
+  }
+
+.modo-oscuro .hr-difuminado {
+    background: linear-gradient(to right, transparent, #666666, transparent);
+  }
+
+.modo-oscuro p {
+    color: #ccc;
+  }
+
+.modo-oscuro .chat::-webkit-scrollbar-thumb{
+    background: #bdbdbd; 
+    border-radius: 5px;
+}
+
+.modo-oscuro .chat::-webkit-scrollbar-thumb:hover{
+    background: #868686;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2); 
+}
+
+.modo-oscuro .chat::-webkit-scrollbar-thumb:active{
+    background-color: #999999;
+}
+
+.modo-oscuro .chat::-webkit-scrollbar-track {
+    background: #888888;
+    
+}
+
+
+.modo-oscuro button {
+    
+    background-color: #888888;
+    color: white;
+    
+}
+
+.modo-oscuro button:hover {
+    background-color: #6d6d6d;
+}
+
+

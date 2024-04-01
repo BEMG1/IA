@@ -1,0 +1,18 @@
+{
+    "en": {
+        "titulo-ajustes": "Settings",
+        "titulo-ajustesG": "General Settings",
+        "etiqueta-idioma": "Select your language:",
+        "btnpreguntar": "Ask",
+        "btnlimpiar": "Clear",
+        "Btn-Scroll": "↓",
+        "btn-guardar": "Save",
+        "btn-volver": "Return",
+        "input-pregunta": "Ask bIA....",
+        "opcion-ingles": "English",
+        "opcion-espanol": "Spanish",
+        "etiqueta-modo": "Select the mode",
+        "opcion-claro": "Light mode ⬜",
+        "opcion-oscuro": "Dark mode ⬛"
+    }
+}
